@@ -1,0 +1,44 @@
+{
+  "properties": [
+    {
+      "name": "application.admin.username",
+      "type": "java.lang.String",
+      "description": "The default administrator username for the application."
+    },
+    {
+      "name": "application.admin.password",
+      "type": "java.lang.String",
+      "description": "The default administrator password for the application."
+    },
+    {
+      "name": "application.security.jwt.secretKey",
+      "type": "java.lang.String",
+      "description": "Secret key for JWT signing."
+    },
+    {
+      "name": "application.security.jwt.accessTokenExpiration",
+      "type": "java.time.Duration",
+      "description": "Access token expiration (e.g., 15m, 1h)."
+    },
+    {
+      "name": "application.security.jwt.refreshTokenExpiration",
+      "type": "java.time.Duration",
+      "description": "Refresh token expiration (e.g., 7d, 30d)."
+    },
+    {
+      "name": "cloudinary.cloudName",
+      "type": "java.lang.String",
+      "description": "The name of the cloud service."
+    },
+    {
+      "name": "cloudinary.apiKey",
+      "type": "java.lang.String",
+      "description": "The API key for accessing the cloud service."
+    },
+    {
+      "name": "cloudinary.apiSecret",
+      "type": "java.lang.String",
+      "description": "The API secret for accessing the cloud service."
+    }
+  ]
+}

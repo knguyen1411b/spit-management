@@ -1,0 +1,49 @@
+services:
+  database:
+    image: mysql:8.0
+    container_name: spit_database
+    environment:
+      MYSQL_ROOT_PASSWORD: a112233
+      MYSQL_DATABASE: spit
+    ports:
+      - "3303:3306"
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - spit-net
+
+  server:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: spit_backend
+    env_file:
+      - ./backend/.env.production
+    restart: unless-stopped
+    depends_on:
+      - database
+    ports:
+      - "8080:8080"
+    networks:
+      - spit-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: spit_frontend
+    restart: unless-stopped
+    depends_on:
+      - server
+    ports:
+      - "3000:3000"
+    networks:
+      - spit-net
+
+networks:
+  spit-net:
+    driver: bridge
+
+volumes:
+  db_data:
