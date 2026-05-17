@@ -41,7 +41,7 @@ export const HeroProvider = ({ children }: { children: ReactNode }): JSX.Element
   return (
     <HeroUIProvider>
       <ToastProvider
-        placement="top-right"
+        placement="o-right"
         maxVisibleToasts={2}
         toastOffset={10}
         toastProps={{

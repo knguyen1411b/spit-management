@@ -1,19 +1,87 @@
-# OS
+```gitignore id="e1vb75"
+# =========================================================
+# Root
+# =========================================================
+
 .DS_Store
 Thumbs.db
+*.log
+*.pem
 
-# IDE
-.vscode/
-.idea/
-*.iml
-
-# Env
+# Environment
 .env
 .env.*
 !.env.example
 
-# Logs
-*.log
+# Uploads
+/uploads/
 
 # Docker
-docker-compose.override.yml
+compose.yml
+docker-compose.yml
+
+# =========================================================
+# Frontend - Next.js
+# =========================================================
+
+/frontend/node_modules
+/frontend/.next
+/frontend/out
+/frontend/build
+/frontend/coverage
+
+/frontend/.pnp
+/frontend/.pnp.js
+
+/frontend/.vercel
+
+/frontend/*.tsbuildinfo
+/frontend/next-env.d.ts
+
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/.pnpm-debug.log*
+
+/frontend/.env*.local
+
+# =========================================================
+# Backend - Spring Boot
+# =========================================================
+
+/backend/build/
+/backend/.gradle/
+/backend/bin/
+/backend/out/
+
+/backend/HELP.md
+
+# Gradle wrapper
+!/backend/gradle/wrapper/gradle-wrapper.jar
+
+# =========================================================
+# IDE
+# =========================================================
+
+.vscode/
+.idea/
+
+*.iml
+*.ipr
+*.iws
+
+.classpath
+.project
+.factorypath
+.settings/
+.springBeans
+.sts4-cache/
+
+# =========================================================
+# OS / Misc
+# =========================================================
+
+*.swp
+*.swo
+*~
+```
